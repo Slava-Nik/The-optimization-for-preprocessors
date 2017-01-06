@@ -1,0 +1,136 @@
+	
+		.start-menu {
+			width: 1100px;
+			margin: 0 auto;
+		}
+		.start-menu__label {
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.start-menu__text {
+			display: block;
+			width: 100%;
+			height: 500px;
+			margin-bottom: 20px;
+			font-size: 15px;
+			resize: none;
+			overflow: scroll-y;
+		}
+		.start-menu__button {
+			display: block;
+			margin: 0 auto;
+			padding: 10px 20px;
+			font-size: 19px;
+			font-weight: bold;
+		}
+		.output {
+			display: none;
+      position: absolute;
+      top: 0;
+			left: 3000px;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			z-index: 100;
+		}
+		.output_disput{
+			margin-bottom: 50px;
+		}
+		.output_disputTitle {
+			padding -top: 30px;
+			padding-left: 10px;
+			font-size: 21px;
+		}
+		.animation-shift {
+			display: block;
+			animation-name: shift;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+		}
+		.output__disputList {
+			margin-bottom: 30px;
+		}
+
+		.output__disputList li {
+			padding-left: 10px;
+			padding-top: 15px;
+		}
+		.output__disputList li p {
+			display: inline-block;
+			font-size: 18px;
+			color: darkblue;
+		}
+		.output__resultButton {
+			margin-left: 30px;
+			padding: 5px 10px;
+			font-size: 21px;
+		}
+		.button-delete {
+			position: relative;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-left: 10px;
+			background-color: #000;
+			border-radius: 3px;
+			opacity: 0.9;
+			vertical-align: middle;
+		}
+		.button-delete::before {
+			content: "";
+			position: absolute;
+			top: 8px;
+			left: 2px;
+			width: 16px;
+			height: 2.5px;
+			transform: rotate(45deg);
+			background-color: #fff;
+		}
+		.button-delete::after {
+			content: "";
+			position: absolute;
+			top: 8px;
+			left: 2px;
+			width: 16px;
+			height: 2.5px;
+			transform: rotate(-45deg);
+			background-color: #fff;
+		}
+
+		.button-delete:hover {
+			opacity: 0.6;
+		}
+		.button-delete:active {
+			opacity: 1;
+		}
+		.output__result-wrapper{
+			padding-top: 50px;
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.output__result-title {
+			margin: 0 auto;
+			margin-bottom: 40px;
+			color: green;
+		}
+		.output__result {
+			margin: 0 auto;
+			width: 600px;
+			line-height: 25px;
+			font-size: 21px;
+		}
+
+
+
+		@keyframes shift {
+			from {
+				left: 3000px;
+			}
+			to {
+				left: 0px;
+			}
+		}
