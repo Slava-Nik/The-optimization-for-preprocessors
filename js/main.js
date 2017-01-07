@@ -49,10 +49,16 @@
 			
 			var className = elem.getAttribute("class");
 			if(!className) return false;
-			var classes = className.split(" ");
+			var classesMass = className.split(" ");
+			var classes = [];
+			for(var j = 0; j < classesMass.length; j++){
+				if(classesMass[j] !== ""){
+					classes.push(classesMass[j]);
+				}
+			}
+
 			for(var i = 0; i < classes.length; i++) {
-				
-				if( (classes[i].indexOf("__") + 1) || (classes[i].indexOf("--") + 1) ) { 
+				if( (classes[i].indexOf("__") + 1) || (classes[i].indexOf("--") + 1)) { 
 					continue;
 				}
 			  // Да, элемент имеет класс похожий на блок, проверим содержит ли он подобные БЭМ-элементы, если да - это БЭМ-блок
