@@ -121,20 +121,44 @@
 							}else return blockClasses[i];
 						}
 					}
-			}
+				}
+		}
+
+
+	
+
 			function getPluginText(result){
 				var blocks = result.split(" ").slice(1);
+
 				blocks = blocks.filter(function(item){
-					if(item !== "") return true;
+					if(item !== ""){
+						return true;
+					} 
 				});
+				var clearBlocks = [];
+				
+				for(var j = 0; j < blocks.length; j++){
+					var clearBlock = blocks[j];
+					for(var k = 0; k <blocks.length - 1; k++){
+						if(clearBlock === blocks[k+j+1]){
+							clearBlock = null;
+							break;
+						}
+					}
+					if(clearBlock){
+						clearBlocks.push(clearBlock);
+					}
+				}
+
+
 				var pluginText = "";
-				for(var i = 0; i < blocks.length; i++){
-					pluginText += ` @import "blocks/${blocks[i]}"<br>`;
+				for(var i = 0; i < clearBlocks.length; i++){
+					pluginText += ` @import "blocks/${clearBlocks[i]}";<br>`;
 				}
 				return pluginText;
 			}
 
-	}
+
 
 
 
