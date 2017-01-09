@@ -119,12 +119,19 @@
 		}
 		.output__result {
 			margin: 0 auto;
+			margin-bottom: 30px;
 			width: 600px;
 			line-height: 25px;
 			font-size: 21px;
 		}
 
-
+		.output_plugInSass {
+			margin: 0 auto;
+			margin-bottom: 30px;
+			width: 600px;
+			line-height: 25px;
+			font-size: 21px;
+		}
 
 		@keyframes shift {
 			from {

@@ -93,8 +93,10 @@
 				outputMenu.firstElementChild.hidden = true;
 
 				var outputResultBlock = document.querySelector('.output__result-wrapper');
+				var outputPlaginSass = document.getElementById('output_plugInSass');
 				outputResultBlock.hidden = false;
 				outputResultBlock.children[1].innerHTML = result;
+				outputPlaginSass.innerHTML = getPluginText(result);
 
 				function addChosenClasses() {
 					var items = disputList.children;
@@ -120,8 +122,20 @@
 						}
 					}
 			}
+			function getPluginText(result){
+				var blocks = result.split(" ").slice(1);
+				blocks = blocks.filter(function(item){
+					if(item !== "") return true;
+				});
+				var pluginText = "";
+				for(var i = 0; i < blocks.length; i++){
+					pluginText += ` @import "blocks/${blocks[i]}"<br>`;
+				}
+				return pluginText;
+			}
 
 	}
+
 
 
 		document.onclick = function(e){
